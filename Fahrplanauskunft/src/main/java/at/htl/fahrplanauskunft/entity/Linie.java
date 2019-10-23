@@ -15,14 +15,12 @@ public class Linie implements Serializable {
     String abfahrtsOrt;
     String ankunftsOrt;
     Transportmittel transportmittel;
-    List<Haltestelle> haltestellen;
 
     //region Constructors
-    public Linie(String abfahrtsOrt, String ankunftsOrt, Transportmittel transportmittel, List<Haltestelle> haltestellen) {
+    public Linie(String abfahrtsOrt, String ankunftsOrt, Transportmittel transportmittel) {
         this.abfahrtsOrt = abfahrtsOrt;
         this.ankunftsOrt = ankunftsOrt;
         this.transportmittel = transportmittel;
-        this.haltestellen = haltestellen;
     }
 
     public Linie() {
@@ -62,14 +60,6 @@ public class Linie implements Serializable {
     public void setTransportmittel(Transportmittel transportmittel) {
         this.transportmittel = transportmittel;
     }
-
-    public List<Haltestelle> getHaltestellen() {
-        return haltestellen;
-    }
-
-    public void setHaltestellen(List<Haltestelle> haltestellen) {
-        this.haltestellen = haltestellen;
-    }
     //endregion
 
     @Override
@@ -79,7 +69,6 @@ public class Linie implements Serializable {
                 ", abfahrtsOrt='" + abfahrtsOrt + '\'' +
                 ", ankunftsOrt='" + ankunftsOrt + '\'' +
                 ", transportmittel=" + transportmittel +
-                ", haltestellen=" + haltestellen +
                 '}';
     }
 }
