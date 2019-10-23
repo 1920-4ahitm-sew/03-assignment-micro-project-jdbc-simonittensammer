@@ -71,4 +71,15 @@ public class Linie implements Serializable {
         this.haltestellen = haltestellen;
     }
     //endregion
+
+    @Override
+    public String toString() {
+        return "Linie{" +
+                "id=" + id +
+                ", abfahrtsOrt='" + abfahrtsOrt + '\'' +
+                ", ankunftsOrt='" + ankunftsOrt + '\'' +
+                ", transportmittel=" + transportmittel +
+                ", haltestellen=" + haltestellen +
+                '}';
+    }
 }
