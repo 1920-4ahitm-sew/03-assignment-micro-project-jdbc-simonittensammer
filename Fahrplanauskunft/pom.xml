@@ -21,4 +21,8 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>Fahrplanauskunft</finalName>
+    </build>
 </project>
