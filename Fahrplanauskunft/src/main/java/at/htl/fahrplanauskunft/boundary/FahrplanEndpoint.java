@@ -26,7 +26,7 @@ public class FahrplanEndpoint {
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Linie getLinie(@PathParam("id") long id) {
+    public Linie getLinie(@PathParam("id") Long id) {
         return em.find(Linie.class, id);
     }
 }
