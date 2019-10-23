@@ -23,4 +23,10 @@ public class FahrplanEndpoint {
         System.out.println("FahrplanEndpoint created ***");
     }
 
+    @GET
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Linie getLinie(@PathParam("id") long id) {
+        return em.find(Linie.class, id);
+    }
 }
