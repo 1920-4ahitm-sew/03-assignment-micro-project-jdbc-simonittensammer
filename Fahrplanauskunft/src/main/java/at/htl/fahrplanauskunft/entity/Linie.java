@@ -2,10 +2,12 @@ package at.htl.fahrplanauskunft.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @SequenceGenerator(name = "LinieSeq", initialValue = 100, allocationSize = 1, sequenceName = "LINIE_SEQ")
 public class Linie implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "LinieSeq")
     @Column(name = "L_ID")
@@ -13,6 +15,9 @@ public class Linie implements Serializable {
     String abfahrtsOrt;
     String ankunftsOrt;
     Transportmittel transportmittel;
+
+    @ManyToMany
+    List<Haltestelle> haltestellen;
 
     //region Constructors
     public Linie(String abfahrtsOrt, String ankunftsOrt, Transportmittel transportmittel) {
