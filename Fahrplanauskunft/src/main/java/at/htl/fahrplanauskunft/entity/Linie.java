@@ -1,15 +1,14 @@
 package at.htl.fahrplanauskunft.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@SequenceGenerator(name = "LinieSeq", initialValue = 100, allocationSize = 1, sequenceName = "LINIE_SEQ")
 public class Linie implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "LinieSeq")
+    @Column(name = "L_ID")
     private Long id;
     String abfahrtsOrt;
     String ankunftsOrt;
